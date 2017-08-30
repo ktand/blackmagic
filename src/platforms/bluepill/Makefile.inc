@@ -16,10 +16,10 @@ LDFLAGS = $(LDFLAGS_BOOT) -Wl,-Ttext=0x8002000
 VPATH += platforms/stm32
 
 SRC += 	cdcacm.c	\
+        traceswoasync.c \
 	usbuart.c 	\
 	serialno.c	\
 	timing.c	\
-	traceswoasync.c \
 	timing_stm32.c	\
 
 all:	blackmagic.bin blackmagic_dfu.bin blackmagic_dfu.hex dfu_upgrade.bin dfu_upgrade.hex
@@ -34,4 +34,3 @@ dfu_upgrade: dfu_upgrade.o dfucore.o dfu_f1.o
 
 host_clean:
 	-$(Q)$(RM) blackmagic.bin blackmagic_dfu blackmagic_dfu.bin blackmagic_dfu.hex dfu_upgrade dfu_upgrade.bin dfu_upgrade.hex
-
